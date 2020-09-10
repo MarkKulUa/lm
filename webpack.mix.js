@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+const WebpackShellPlugin = require('webpack-shell-plugin');
 
 /*
  |--------------------------------------------------------------------------
@@ -11,7 +12,27 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .postCss('resources/css/app.css', 'public/css', [
-        //
-    ]);
+mix.webpackConfig({
+    resolve: {
+        extensions: ['.js', '.json', '.vue'],
+        alias: {
+            '~': path.join(__dirname, './resources/js')
+        }
+    }
+}).js('resources/js/app.js', 'public/js')
+    .sass('resources/sass/app.scss', 'public/css');
+
+
+if (mix.inProduction()) {
+
+    mix.webpackConfig({
+        plugins: [
+            new WebpackShellPlugin({
+                onBuildStart: ['php artisan fixer:fix --path app'],
+                onBuildEnd: []
+            }),
+        ],
+    });
+
+    mix.version();
+}

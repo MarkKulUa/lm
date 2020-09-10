@@ -2,7 +2,13 @@
 /public/hot
 /public/storage
 /storage/*.key
+/database/*.sqlite
 /vendor
+/.idea
+/.vscode
+/.vagrant
+.idea
+.DS_Store
 .env
 .env.backup
 .phpunit.result.cache
@@ -10,8 +16,3 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
-/.idea
-.idea
-/.vscode
-/.vagrant
-/database/*.sqlite
