@@ -18,43 +18,49 @@ class DatabaseSeeder extends Seeder
             [
                 'name' => 'Item One',
                 'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!',
-                'price' => 21.05,
-                'photo' => '/images/700x400.png',
+                'price' => 24.99,
+                'units' => 88,
+                'image' => '/images/700x400.png',
 
             ],
             [
                 'name' => 'Item Two',
                 'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.',
-                'price' => 4.99,
-                'photo' => '/images/700x400.png',
+                'price' => 24.99,
+                'units' => 19,
+                'image' => '/images/700x400.png',
 
             ],
             [
                 'name' => 'Item Three',
                 'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!',
-                'price' => 55.09,
-                'photo' => '/images/700x400.png',
+                'price' => 24.99,
+                'units' => 50,
+                'image' => '/images/700x400.png',
 
             ],
             [
                 'name' => 'Item Four',
                 'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.',
-                'price' => 15.49,
-                'photo' => '/images/700x400.png',
+                'price' => 24.99,
+                'units' => 20,
+                'image' => '/images/700x400.png',
 
             ],
             [
                 'name' => 'Item Five',
                 'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!',
-                'price' => 105.89,
-                'photo' => '/images/700x400.png',
+                'price' => 24.99,
+                'units' => 100,
+                'image' => '/images/700x400.png',
 
             ],
             [
                 'name' => 'Item Six',
                 'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.',
-                'price' => 240.19,
-                'photo' => '/images/700x400.png',
+                'price' => 24.99,
+                'units' => 10,
+                'image' => '/images/700x400.png',
 
             ],
         ];

@@ -2,10 +2,17 @@
 
 namespace App\Exceptions;
 
+use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Auth\AuthenticationException;
+use App\Traits\RestTrait;
+use App\Traits\RestExceptionHandlerTrait;
 
 class Handler extends ExceptionHandler
 {
+    use RestTrait;
+    use RestExceptionHandlerTrait;
+
     /**
      * A list of the exception types that are not reported.
      *
@@ -33,5 +40,22 @@ class Handler extends ExceptionHandler
     public function register()
     {
         //
+    }
+
+    /**
+     * Render an exception into an HTTP response.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Exception  $exception
+     * @return \Illuminate\Http\Response
+     */
+    public function render($request, $exception)
+    {
+        // If the request wants JSON (AJAX doesn't always want JSON)
+        if ($request->expectsJson() || $this->isApiCall($request)) {
+            return $this->getJsonResponseForException($request, $exception);
+        }
+
+        return parent::render($request, $exception);
     }
 }

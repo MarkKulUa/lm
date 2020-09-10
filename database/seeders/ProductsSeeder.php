@@ -17,7 +17,7 @@ class ProductsSeeder extends Seeder
                 'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!',
                 'price' => 24.99,
                 'units' => 88,
-                'photo' => '/images/700x400.png',
+                'image' => '/images/700x400.png',
 
             ],
             [
@@ -25,7 +25,7 @@ class ProductsSeeder extends Seeder
                 'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.',
                 'price' => 24.99,
                 'units' => 19,
-                'photo' => '/images/700x400.png',
+                'image' => '/images/700x400.png',
 
             ],
             [
@@ -33,7 +33,7 @@ class ProductsSeeder extends Seeder
                 'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!',
                 'price' => 24.99,
                 'units' => 50,
-                'photo' => '/images/700x400.png',
+                'image' => '/images/700x400.png',
 
             ],
             [
@@ -41,7 +41,7 @@ class ProductsSeeder extends Seeder
                 'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.',
                 'price' => 24.99,
                 'units' => 20,
-                'photo' => '/images/700x400.png',
+                'image' => '/images/700x400.png',
 
             ],
             [
@@ -49,7 +49,7 @@ class ProductsSeeder extends Seeder
                 'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!',
                 'price' => 24.99,
                 'units' => 100,
-                'photo' => '/images/700x400.png',
+                'image' => '/images/700x400.png',
 
             ],
             [
@@ -57,7 +57,7 @@ class ProductsSeeder extends Seeder
                 'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.',
                 'price' => 24.99,
                 'units' => 10,
-                'photo' => '/images/700x400.png',
+                'image' => '/images/700x400.png',
 
             ],
         ];

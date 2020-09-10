@@ -3,9 +3,11 @@
 namespace App\Http\Middleware;
 
 use Illuminate\Auth\Middleware\Authenticate as Middleware;
+use App\Traits\RestTrait;
 
 class Authenticate extends Middleware
 {
+    use RestTrait;
     /**
      * Get the path the user should be redirected to when they are not authenticated.
      *
@@ -14,10 +16,14 @@ class Authenticate extends Middleware
      */
     protected function redirectTo($request)
     {
-        if ($request->expectsJson() || $this->isApiCall($request)) {
-            return response()->json(['status' => 'error', 'message' => 'Unauthenticated', 'error' => 'Unauthenticated.'], 401);
+        if (!$request->expectsJson() && !$this->isApiCall($request)) {
+            return route('/login');
         }
 
-        return route('/login');
+//        return $this->jsonResponse([
+//                                       'status' => 'error',
+//                                       'message' => 'Unauthenticated',
+//                                       'error' => 'Unauthenticated.'
+//                                   ], 401);
     }
 }
