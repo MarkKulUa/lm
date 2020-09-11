@@ -7,7 +7,6 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Laravel\Passport\HasApiTokens;
 
-
 class User extends Authenticatable
 {
     use Notifiable, SoftDeletes, HasApiTokens;
@@ -20,7 +19,8 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
     
-    public function orders(){
+    public function orders()
+    {
         return $this->hasMany(Order::class);
     }
 }

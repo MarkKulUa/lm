@@ -206,7 +206,7 @@ trait RestExceptionHandlerTrait
         } elseif ($preException instanceof
             \Tymon\JWTAuth\Exceptions\TokenBlacklistedException) {
             return $this->jsonResponse(['status' => 'error', 'message' => 'TOKEN_BLACKLISTED'], $statusCode);
-        }elseif ($e->getMessage() === 'Token not provided') {
+        } elseif ($e->getMessage() === 'Token not provided') {
             return $this->jsonResponse(['status' => 'error', 'message' => 'Token not provided'], 422);
         } else {
             return $this->jsonResponse(['status' => 'error', 'message' => 'Unauthorized'], $statusCode);

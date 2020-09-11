@@ -10,7 +10,7 @@ class OrderController extends Controller
 {
     public function index()
     {
-        return response()->json(Order::with(['product'])->get(),200);
+        return response()->json(Order::with(['product'])->get(), 200);
     }
         
     public function deliverOrder(Order $order)
@@ -43,7 +43,7 @@ class OrderController extends Controller
 
     public function show(Order $order)
     {
-        return response()->json($order,200);
+        return response()->json($order, 200);
     }
     
     public function update(Request $request, Order $order)

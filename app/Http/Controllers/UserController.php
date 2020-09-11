@@ -10,7 +10,8 @@ use App\Models\User;
 
 class UserController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         return response()->json(User::with(['orders'])->get(), 200);
     }
     public function login(Request $request)
@@ -62,11 +63,11 @@ class UserController extends Controller
     
     public function show(User $user)
     {
-        return response()->json($user,200);
+        return response()->json($user, 200);
     }
     
     public function showOrders(User $user)
     {
-        return response()->json($user->orders()->with(['product'])->get(),200);
+        return response()->json($user->orders()->with(['product'])->get(), 200);
     }
 }

@@ -9,7 +9,7 @@ class ProductController extends Controller
 {
     public function index()
     {
-        return response()->json(Product::all(),200);
+        return response()->json(Product::all(), 200);
     }
     
     public function store(Request $request)
@@ -31,16 +31,16 @@ class ProductController extends Controller
     
     public function show(Product $product)
     {
-        return response()->json($product,200); 
+        return response()->json($product, 200);
     }
 
     public function uploadFile(Request $request)
     {
-        if($request->hasFile('image')){
+        if ($request->hasFile('image')) {
             $name = time()."_".$request->file('image')->getClientOriginalName();
             $request->file('image')->move(public_path('images'), $name);
         }
-        return response()->json(asset("images/$name"),201);
+        return response()->json(asset("images/$name"), 201);
     }
 
     public function update(Request $request, Product $product)
