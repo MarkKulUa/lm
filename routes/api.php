@@ -18,8 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-//Route::post('login', 'UserController@login');
-Route::post('login', 'LoginController@login')->name('login');
+Route::post('login', 'UserController@login')->name('login');
 Route::post('register', 'UserController@register');
 Route::get('/products', 'ProductController@index');
 Route::post('/upload-file', 'ProductController@uploadFile');

@@ -1,7 +1,21 @@
 import Vue from 'vue'
+import Vuex from 'vuex';
 import VueRouter from 'vue-router'
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+import Snotify from 'vue-snotify';
+import store from './store';
+import i18n from '~/plugins/i18n';
+
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-vue/dist/bootstrap-vue.css";
 
 Vue.use(VueRouter)
+
+// Install BootstrapVue
+Vue.use(BootstrapVue)
+// Optionally install the BootstrapVue icon components plugin
+Vue.use(IconsPlugin)
+Vue.use(Snotify);
 
 import App from './views/App'
 import Home from './views/Home'
@@ -12,6 +26,7 @@ import Checkout from './views/Checkout'
 import Confirmation from './views/Confirmation'
 import UserBoard from './views/UserBoard'
 import Admin from './views/Admin'
+
 
 const router = new VueRouter({
     mode: 'history',
@@ -111,5 +126,7 @@ router.beforeEach((to, from, next) => {
 const app = new Vue({
     el: '#app',
     components: { App },
+    store,
+    i18n,
     router,
 });

@@ -9,7 +9,7 @@
                     <br>
                     <div class="row">
                         <div class="col-md-4 product-box" v-for="(order,index) in orders" @key="index">
-                            <img :src="order.product.image" :alt="order.product.name">
+                            <img :src="order.product.image" :alt="order.product.name"   class="col-md-12">
                             <h5><span v-html="order.product.name"></span><br>
                                 <span class="small-text text-muted">$ {{order.product.price}}</span>
                             </h5>
@@ -19,6 +19,9 @@
                             </span>
                             <br><br>
                             <p><strong>Delivery address:</strong> <br>{{order.address}}</p>
+                        </div>
+                        <div class="col-md-12 product-box" v-if="orders.length === 0">
+                            <h5>You have no orders</h5>
                         </div>
                     </div>
                 </div>
